@@ -1,14 +1,15 @@
 import React from 'react';
 import { Todo } from '../Types/Todos';
-
+import { RiDeleteBinLine } from "react-icons/ri";
 interface TodoItemProps {
     todo: Todo;
     onCompletedChange: (id: number, completed: boolean) => void;
+    onDelete: (id: number) => void;
 }
-const TodoItem = ({todo, onCompletedChange}: TodoItemProps) => {
+const TodoItem = ({todo, onCompletedChange, onDelete}: TodoItemProps) => {
   return (
-    <div>
-        <label htmlFor="" className='flex items-center gap-2 border border-gray-400 rounded-md p-2 bg-white hover:bg-slate-50'>
+    <div className='flex items-center gap-2'>
+        <label htmlFor="" className='flex items-center gap-2 border border-gray-400 rounded-md p-2 bg-white hover:bg-slate-50 grow'>
             <input 
             type="checkbox" 
             className='scale-125'
@@ -17,6 +18,9 @@ const TodoItem = ({todo, onCompletedChange}: TodoItemProps) => {
             />
             <span className={`font-family ${todo.completed ? "line-through text-gray-400" : ""}`}>{todo.title}</span>
         </label>
+        <button onClick={() => onDelete(todo.id)}>
+          <RiDeleteBinLine/>
+        </button>
     </div>
   )
 }
