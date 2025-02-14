@@ -1,4 +1,4 @@
-import { Todo } from "../Types/Todos";
+import { Colors, Todo } from "../Types/Todos";
 
 export const dummyData: Todo[] = [
     {
@@ -17,3 +17,47 @@ export const dummyData: Todo[] = [
         completed: false,
     },
 ]; 
+
+
+export const DataColors: Colors[] = [
+    {
+        id: 1,
+        name: "red-600",
+    },
+    {
+        id: 2,
+        name: "yellow-600",
+    },
+    {
+        id: 3,
+        name: "green-600",
+    },
+    {
+        id: 4,
+        name: "blue-600",
+    },
+    {
+        id: 5,
+        name: "violet-600",
+    },
+    {
+        id: 6,
+        name: "pink-600",
+    },
+    {
+        id: 7,
+        name: "gray-600",
+    },
+    {
+        id: 8,
+        name: "fuchsia-600",
+    },
+    {
+        id: 9,
+        name: "neutral-600",
+    },
+    {
+        id: 10,
+        name: "lime-600",
+    },
+]

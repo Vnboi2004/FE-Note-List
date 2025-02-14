@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 
-const Snowfall = () => {
+interface SnowfallProps {
+  theme: string;
+};
+
+const Snowfall = ({theme}: SnowfallProps) => {
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -33,7 +37,7 @@ const Snowfall = () => {
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "white";
+            ctx.fillStyle = theme === "dark" ? "white" : "yellow";
             ctx.beginPath();
             snowflakes.forEach(flake => {
               ctx.moveTo(flake.x, flake.y);
@@ -59,7 +63,7 @@ const Snowfall = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         };
 
-    }, []);
+    }, [theme]);
 
     return <canvas ref={canvasRef} className='fixed inset-0 pointer-events-none'/>
 }

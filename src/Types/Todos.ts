@@ -4,3 +4,8 @@ export interface Todo {
     completed: boolean;
 };
 
+
+export interface Colors {
+    id: number;
+    name: string;
+};
